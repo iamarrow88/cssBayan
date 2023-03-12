@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: "Book Antiqua", sans-serif;
+    font-size: 20px;
+    color: #1e7a7a;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1440px;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    color: black;
+}
+
+.mem__title {
+    padding: 20px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+input{
+    display: none;
+}
+
+
+table.mem__img {
+    width: 100%;
+}
+
+table.mem__img span{
+    margin: 0 auto;
+    display: block;
+    width: 500px;
+}
+input:checked ~ .mem__img {
+    visibility: visible;
+    transition: visibility .3s linear,
+    opacity .3s linear;
+    opacity: 1;
+}
+input:checked + .mem__title{
+    color: black;
+}
+
+.main .container .icon-one,
+.main .container .icon-two {
+    display: none;
+}
+
+.main .container:hover .icon-one,
+.main .container:hover .icon-two {
+    display: block;
+}
+
+.main .container:hover .mem:hover .icon-one{
+    cursor: pointer;
+    transform: rotate(45deg);
+    transition: transform .7s;
+}
+
+.main .container:hover {
+    color: black;
+}
+
+.main .container:hover .mem:hover .icon-two{
+    cursor: pointer;
+    transform: rotate(45deg);
+    transition: transform .7s;
+}
+.mem:hover .mem__img {
+    visibility: visible;
+    transition: visibility .3s linear,
+    opacity .3s linear;
+    opacity: 1;
+}
+
+.mem__text {
+    text-align: center;
+}
+
+.mem__icon {
+    position: relative;
+    height: 16px;
+    width: 16px;
+}
+
+.icon-one {
+    position: absolute;
+    top: 7px;
+    height: 2px;
+    width: 16px;
+    background-color: #000;
+    transition: transform .7s;
+}
+
+.icon-two {
+    position: absolute;
+    left: 7px;
+    width: 2px;
+    height: 16px;
+    background-color: #000;
+    transition: transform .7s;
+}
+
+.mem__img {
+    margin: 0 auto;
+    width: 500px;
+    opacity: 0;
+    transition: visibility .3s linear,
+    opacity .3s linear;
+    visibility: collapse;
+
+}
+
+/*.mem__img:hover {
+    visibility: visible;
+}*/
+
+.mem__img img  {
+    width: 100%;
+}
+
+
+.input:active > .mem__title{
+    color: red;
+}
+
+.input:active > .icon-one,
+.input:active > .icon-two {
+    background-color: red;
+}
