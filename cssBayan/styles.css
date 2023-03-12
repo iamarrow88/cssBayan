@@ -7,29 +7,29 @@
 body {
     scroll-behavior: smooth;
     font-family: "Book Antiqua", sans-serif;
-    font-size: 20px;
+    font-size: 2.5rem;
     color: #1e7a7a;
 }
 
 .container {
     margin: 0 auto;
-    padding: 20px;
-    max-width: 1440px;
+    padding: 2.5rem;
+    max-width: 85vw;
 }
 
 .title {
-    font-size: 36px;
+    font-size: 4rem;
     font-weight: 600;
     text-align: center;
     color: black;
 }
 
 .meme__title {
-    padding: 20px;
+    padding: 2.5rem;
     max-width: 100%;
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid darkgray;
+    border-top: .01em solid darkgray;
 }
 
 input{
@@ -42,84 +42,65 @@ table.meme__img {
 }
 
 table.meme__img span{
+    cursor: pointer;
     margin: 0 auto;
     display: block;
-    width: 500px;
+    width: 30vw;
 }
+
+table.meme__img img {
+    cursor: pointer;
+}
+
 input:checked ~ .meme__img {
     visibility: visible;
     transition: visibility .3s linear,
     opacity .3s linear;
     opacity: 1;
+    cursor: pointer;
 }
 input:checked ~ .meme__title{
     color: black;
 }
 
-.main .container .icon-one,
-.main .container .icon-two {
+.main .container .meme__icon-img {
     display: none;
 }
 
-.main .container:hover .icon-one,
-.main .container:hover .icon-two {
+.main .container:hover .meme__icon-img {
     display: block;
 }
 
-.main .container:hover .meme:hover .icon-one{
+.meme__icon-img {
+    width: 1em;
+    height: 1em;
+}
+
+.main .container:hover .meme:hover .meme__icon-img {
     cursor: pointer;
     transform: rotate(45deg);
     transition: transform .7s;
 }
-
 .main .container:hover {
     color: black;
+    pointer-events: auto;
     cursor: pointer;
 }
 
-.main .container:hover .meme:hover .icon-two{
-    cursor: pointer;
-    transform: rotate(45deg);
-    transition: transform .7s;
-}
 .meme:hover .meme__img {
     visibility: visible;
     transition: visibility .3s linear,
     opacity .3s linear;
     opacity: 1;
+    cursor: pointer;
 }
 
 .meme__text {
     text-align: center;
 }
 
-.meme__icon {
-    position: relative;
-    height: 16px;
-    width: 16px;
-}
-
-.icon-one {
-    position: absolute;
-    top: 7px;
-    height: 2px;
-    width: 16px;
-    background-color: #000;
-    transition: transform .7s;
-}
-
-.icon-two {
-    position: absolute;
-    left: 7px;
-    width: 2px;
-    height: 16px;
-    background-color: #000;
-    transition: transform .7s;
-}
-
 .meme__img {
     margin: 0 auto;
-    width: 500px;
     opacity: 0;
     transition: visibility .3s linear,
     opacity .3s linear;
@@ -127,20 +108,37 @@ input:checked ~ .meme__title{
 
 }
 
-/*.meme__img:hover {
-    visibility: visible;
-}*/
-
 .meme__img img  {
     width: 100%;
+    cursor: pointer;
 }
 
 
-.label:active ~ .meme__title{
-    color: red;
+label {
+    cursor: pointer;
 }
 
-.input:active ~ .icon-one,
-.input:active ~ .icon-two {
-    background-color: red;
+#meme1:target .meme__icon-img svg {
+    fill: red;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 10px;
+    }
+
+    table.meme__img span{
+        width: 50vw;
+    }
+}
+
+
+@media (max-width: 400px) {
+    html {
+        font-size: 8px;
+    }
+
+    table.meme__img span{
+        width: 80vw;
+    }
 }
