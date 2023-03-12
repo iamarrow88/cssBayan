@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    scroll-behavior: smooth;
+    font-family: "Book Antiqua", sans-serif;
+    font-size: 20px;
+    color: #1e7a7a;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1440px;
+}
+
+.title {
+    font-size: 36px;
+    font-weight: 600;
+    text-align: center;
+    color: black;
+}
+
+.meme__title {
+    padding: 20px;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid darkgray;
+}
+
+input{
+    display: none;
+}
+
+
+table.meme__img {
+    width: 100%;
+}
+
+table.meme__img span{
+    margin: 0 auto;
+    display: block;
+    width: 500px;
+}
+input:checked ~ .meme__img {
+    visibility: visible;
+    transition: visibility .3s linear,
+    opacity .3s linear;
+    opacity: 1;
+}
+input:checked ~ .meme__title{
+    color: black;
+}
+
+.main .container .icon-one,
+.main .container .icon-two {
+    display: none;
+}
+
+.main .container:hover .icon-one,
+.main .container:hover .icon-two {
+    display: block;
+}
+
+.main .container:hover .meme:hover .icon-one{
+    cursor: pointer;
+    transform: rotate(45deg);
+    transition: transform .7s;
+}
+
+.main .container:hover {
+    color: black;
+    cursor: pointer;
+}
+
+.main .container:hover .meme:hover .icon-two{
+    cursor: pointer;
+    transform: rotate(45deg);
+    transition: transform .7s;
+}
+.meme:hover .meme__img {
+    visibility: visible;
+    transition: visibility .3s linear,
+    opacity .3s linear;
+    opacity: 1;
+}
+
+.meme__text {
+    text-align: center;
+}
+
+.meme__icon {
+    position: relative;
+    height: 16px;
+    width: 16px;
+}
+
+.icon-one {
+    position: absolute;
+    top: 7px;
+    height: 2px;
+    width: 16px;
+    background-color: #000;
+    transition: transform .7s;
+}
+
+.icon-two {
+    position: absolute;
+    left: 7px;
+    width: 2px;
+    height: 16px;
+    background-color: #000;
+    transition: transform .7s;
+}
+
+.meme__img {
+    margin: 0 auto;
+    width: 500px;
+    opacity: 0;
+    transition: visibility .3s linear,
+    opacity .3s linear;
+    visibility: collapse;
+
+}
+
+/*.meme__img:hover {
+    visibility: visible;
+}*/
+
+.meme__img img  {
+    width: 100%;
+}
+
+
+.label:active ~ .meme__title{
+    color: red;
+}
+
+.input:active ~ .icon-one,
+.input:active ~ .icon-two {
+    background-color: red;
+}
