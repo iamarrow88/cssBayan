@@ -24,11 +24,12 @@ body {
     color: black;
 }
 
-.mem__title {
+.meme__title {
     padding: 20px;
     max-width: 100%;
     display: flex;
     justify-content: space-between;
+    border-top: 1px solid darkgray;
 }
 
 input{
@@ -36,22 +37,22 @@ input{
 }
 
 
-table.mem__img {
+table.meme__img {
     width: 100%;
 }
 
-table.mem__img span{
+table.meme__img span{
     margin: 0 auto;
     display: block;
     width: 500px;
 }
-input:checked ~ .mem__img {
+input:checked ~ .meme__img {
     visibility: visible;
     transition: visibility .3s linear,
     opacity .3s linear;
     opacity: 1;
 }
-input:checked + .mem__title{
+input:checked ~ .meme__title{
     color: black;
 }
 
@@ -65,7 +66,7 @@ input:checked + .mem__title{
     display: block;
 }
 
-.main .container:hover .mem:hover .icon-one{
+.main .container:hover .meme:hover .icon-one{
     cursor: pointer;
     transform: rotate(45deg);
     transition: transform .7s;
@@ -73,25 +74,26 @@ input:checked + .mem__title{
 
 .main .container:hover {
     color: black;
+    cursor: pointer;
 }
 
-.main .container:hover .mem:hover .icon-two{
+.main .container:hover .meme:hover .icon-two{
     cursor: pointer;
     transform: rotate(45deg);
     transition: transform .7s;
 }
-.mem:hover .mem__img {
+.meme:hover .meme__img {
     visibility: visible;
     transition: visibility .3s linear,
     opacity .3s linear;
     opacity: 1;
 }
 
-.mem__text {
+.meme__text {
     text-align: center;
 }
 
-.mem__icon {
+.meme__icon {
     position: relative;
     height: 16px;
     width: 16px;
@@ -115,7 +117,7 @@ input:checked + .mem__title{
     transition: transform .7s;
 }
 
-.mem__img {
+.meme__img {
     margin: 0 auto;
     width: 500px;
     opacity: 0;
@@ -125,20 +127,20 @@ input:checked + .mem__title{
 
 }
 
-/*.mem__img:hover {
+/*.meme__img:hover {
     visibility: visible;
 }*/
 
-.mem__img img  {
+.meme__img img  {
     width: 100%;
 }
 
 
-.input:active > .mem__title{
+.label:active ~ .meme__title{
     color: red;
 }
 
-.input:active > .icon-one,
-.input:active > .icon-two {
+.input:active ~ .icon-one,
+.input:active ~ .icon-two {
     background-color: red;
 }
